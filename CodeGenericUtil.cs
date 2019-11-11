@@ -10,6 +10,7 @@ namespace mickey_framework
             var basePath = AppContext.BaseDirectory;
             // 创建 “父级” 文件夹
             var codePath = Path.Join(basePath, "mickeyCodeGeneric");
+            deleteFolder(codePath);
             createFolder(codePath);
 
             // 生成mapper文件夹及文件
@@ -32,6 +33,11 @@ namespace mickey_framework
             GenericServiceImplFile(package, poName, serviceImplPath);
 
             return codePath;
+        }
+
+        private static void deleteFolder(string codePath)
+        {
+            if (Directory.Exists(codePath)) Directory.Delete(codePath, true);
         }
 
         private static void GenericServiceImplFile(string package, string poName, string serviceImplPath)
