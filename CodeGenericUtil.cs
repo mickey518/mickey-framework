@@ -101,7 +101,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
  */
 @Slf4j
 @RestController
-@RequestMapping(value = """+ $"/api/{poName}/"  + $@""", produces = APPLICATION_JSON_VALUE)
+@RequestMapping(value = """+ $"/api/{poName}"  + $@""", produces = APPLICATION_JSON_VALUE)
 @Api(tags = ""{poName} API"")
 public class {poName}Controller extends BaseController<I{poName}Service, {poName}> " + @"{
 
